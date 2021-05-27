@@ -1,0 +1,55 @@
+﻿@page "/activities"
+
+<a href="activity" class="btn btn-primary mt-3 mb-3">Add a new Activity</a>
+<br />
+
+@if (Activities == null)
+{
+    <div class="alert alert-info" role="alert">
+        <strong>Loading Activities!!!</strong> Please wait...
+    </div>
+}
+else if (Activities.Any())
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Activity Name</th>
+                <th scope="col">Activity Type</th>
+                <th scope="col">Date Created</th>
+                <th scope="col" colspan="2" class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var counter = 1;
+            }
+            @foreach (var activity in Activities)
+            {
+                <tr>
+                    <th scope="row">@counter</th>
+                    <td>@activity.ActivityName</td>
+                    <td>@activity.ActivityType.ToString()</td>
+                    <td>@activity.DateCreated.ToString("dd-MMM-yyyy hh:mm tt")</td>
+                    <td>
+                        <a class="btn btn-outline-info" href="@($"activity/{activity.ActivityId}")">Edit</a>
+                    </td>
+                    <td>
+                        <button class="btn btn-outline-danger" @onclick="@(() => DeleteClick(activity.ActivityId))">Delete</button>
+                    </td>
+                </tr>
+                counter++;
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info" role="alert">
+        <strong>No Activities Found!</strong>
+    </div>
+}
+
+<DeleteConfirmBase @ref="DeleteConfirmation" ConfirmationChanged="ConfirmDeleteClick" ConfirmationMessage=@($"Are you sure you want to delete?")>
+</DeleteConfirmBase>

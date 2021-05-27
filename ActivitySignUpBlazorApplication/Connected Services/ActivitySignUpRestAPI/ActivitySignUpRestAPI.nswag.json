@@ -1,0 +1,541 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "ActivitySignUpRestAPI",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Activities/AllActivities": {
+      "get": {
+        "tags": [
+          "Activities"
+        ],
+        "operationId": "AllActivities",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Activity"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Activity"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Activity"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Activities/GetActivityById/{id}": {
+      "get": {
+        "tags": [
+          "Activities"
+        ],
+        "operationId": "GetActivityById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Activity"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Activity"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Activity"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Activities/UpdateActivity/{id}": {
+      "put": {
+        "tags": [
+          "Activities"
+        ],
+        "operationId": "UpdateActivity",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Activity"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Activity"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Activity"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Activities/CreateActivity": {
+      "post": {
+        "tags": [
+          "Activities"
+        ],
+        "operationId": "CreateActivity",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Activity"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Activity"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Activity"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Activity"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Activity"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Activity"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Activities/DeleteActivity/{id}": {
+      "delete": {
+        "tags": [
+          "Activities"
+        ],
+        "operationId": "DeleteActivity",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Activity"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Activity"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Activity"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Subscriptions/AllSubscriptions": {
+      "get": {
+        "tags": [
+          "Subscriptions"
+        ],
+        "operationId": "AllSubscriptions",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Subscription"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Subscription"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Subscription"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Subscriptions/GetSubscriptionById/{id}": {
+      "get": {
+        "tags": [
+          "Subscriptions"
+        ],
+        "operationId": "GetSubscriptionById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Subscription"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Subscription"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Subscription"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Subscriptions/UpdateSubscription/{id}": {
+      "put": {
+        "tags": [
+          "Subscriptions"
+        ],
+        "operationId": "UpdateSubscription",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Subscription"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Subscription"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Subscription"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Subscriptions/CreateSubscription": {
+      "post": {
+        "tags": [
+          "Subscriptions"
+        ],
+        "operationId": "CreateSubscription",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Subscription"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Subscription"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Subscription"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Subscription"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Subscription"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Subscription"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Subscriptions/DeleteSubscription/{id}": {
+      "delete": {
+        "tags": [
+          "Subscriptions"
+        ],
+        "operationId": "DeleteSubscription",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Subscription"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Subscription"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Subscription"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ActivityTypes": {
+        "type": "integer",
+        "format": "int32",
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      "Subscription": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "activityId",
+          "email",
+          "firstName",
+          "lastName"
+        ],
+        "properties": {
+          "subscriptionId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "firstName": {
+            "type": "string",
+            "maxLength": 255,
+            "minLength": 0
+          },
+          "lastName": {
+            "type": "string",
+            "maxLength": 255,
+            "minLength": 0
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "maxLength": 255,
+            "minLength": 0
+          },
+          "activityId": {
+            "type": "integer",
+            "format": "int32",
+            "maximum": 2147483647.0,
+            "minimum": 1.0
+          },
+          "comments": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateCreated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "activity": {
+            "$ref": "#/components/schemas/Activity"
+          }
+        }
+      },
+      "Activity": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "activityName",
+          "activityType"
+        ],
+        "properties": {
+          "activityId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "activityName": {
+            "type": "string",
+            "maxLength": 255,
+            "minLength": 0
+          },
+          "activityType": {
+            "$ref": "#/components/schemas/ActivityTypes"
+          },
+          "dateCreated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "deleted": {
+            "type": "boolean"
+          },
+          "subscriptions": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/Subscription"
+            }
+          }
+        }
+      }
+    }
+  }
+}

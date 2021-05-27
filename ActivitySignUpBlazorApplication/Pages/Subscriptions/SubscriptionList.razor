@@ -1,0 +1,47 @@
+﻿@page "/subscriptions"
+
+@if (Subscriptions == null)
+{
+    <div class="alert alert-info" role="alert">
+        <strong>Loading Subscriptions!!!</strong> Please wait...
+    </div>
+}
+else if (Subscriptions.Any())
+{
+    <h4>All Subscribed Users</h4><br />
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Activity</th>
+                <th scope="col">Date Created</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var counter = 1;
+            }
+            @foreach (var subscription in Subscriptions)
+            {
+                <tr>
+                    <th scope="row">@counter</th>
+                    <td>@subscription.FirstName</td>
+                    <td>@subscription.LastName</td>
+                    <td>@subscription.Email</td>
+                    <td>@subscription.Activity.ActivityName</td>
+                    <td>@subscription.DateCreated.ToString("dd-MMM-yyyy hh:mm tt")</td>
+                </tr>
+                counter++;
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info" role="alert">
+        <strong>No Subscriptions Found!</strong>
+    </div>
+}
