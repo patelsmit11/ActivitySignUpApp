@@ -15,6 +15,7 @@ namespace ActivitySignUpBlazorApplication.Pages.Subscriptions
 
         protected override async Task OnInitializedAsync()
         {
+            //Load all activities
             Activities = await new Client(HttpClient).AllActivitiesAsync();
         }
 

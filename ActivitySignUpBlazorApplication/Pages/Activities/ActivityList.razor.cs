@@ -17,6 +17,7 @@ namespace ActivitySignUpBlazorApplication.Pages.Activities
         
         protected override async Task OnInitializedAsync()
         {
+            //Load all activities
             Activities = (await new Client(HttpClient).AllActivitiesAsync()).ToList();
         }
 
@@ -30,6 +31,7 @@ namespace ActivitySignUpBlazorApplication.Pages.Activities
         {
             if (deleteConfirmed)
             {
+                //Delete Activity from database
                 await new Client(HttpClient).DeleteActivityAsync(ActivityId);
                 var activity = Activities.FirstOrDefault(q => q.ActivityId == ActivityId);
                 if (activity != null)

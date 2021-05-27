@@ -22,6 +22,7 @@ namespace ActivitySignUpBlazorApplication.Pages.Activities
 
         private async void HandleValidSubmit()
         {
+            //ActivityId is not null, update an existing record otherwise insert a new record.
             if (ActivityId > 0)
             {
                 await new Client(HttpClient).UpdateActivityAsync(Activity.ActivityId, Activity);
