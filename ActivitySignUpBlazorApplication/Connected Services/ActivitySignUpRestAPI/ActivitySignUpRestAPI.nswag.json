@@ -104,6 +104,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Activity"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Activity"
@@ -123,7 +128,24 @@
         },
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Activity"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Activity"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Activity"
+                }
+              }
+            }
           }
         }
       }
@@ -136,6 +158,11 @@
         "operationId": "CreateActivity",
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Activity"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Activity"
@@ -317,6 +344,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Subscription"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Subscription"
@@ -336,7 +368,24 @@
         },
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Subscription"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Subscription"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Subscription"
+                }
+              }
+            }
           }
         }
       }
@@ -349,6 +398,11 @@
         "operationId": "CreateSubscription",
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Subscription"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Subscription"

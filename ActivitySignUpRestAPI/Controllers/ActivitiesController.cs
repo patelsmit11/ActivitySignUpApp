@@ -7,7 +7,7 @@ using ActivitySignUpDAL.Services.Interfaces;
 
 namespace ActivitySignUpRestAPI.Controllers
 {
-    [Route("api/Activities")]
+    [Route("api/[controller]")]
     [ApiController]
     public class ActivitiesController : ControllerBase
     {
